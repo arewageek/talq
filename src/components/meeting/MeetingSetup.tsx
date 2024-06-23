@@ -26,8 +26,8 @@ const MeetingSetup = ({ setIsSetupComplete }: { setIsSetupComplete: (value: bool
             <h1 className='text-2xl font-bold'>Pre-Meeting Setup</h1>
             <VideoPreview />
             <div className='flex h-16 items-center justify-center gap-3'>
-                <label htmlFor="" className='flex items-center justify-center gap-2 font-medium'>
-                    <input type="checkbox" checked={isMicCamActive} onChange={e => setIsMicCamActive(e.target.checked)} />
+                <label className='flex items-center justify-center gap-2 font-medium'>
+                    <input id='toggleMicCam' type="checkbox" checked={isMicCamActive} onChange={e => setIsMicCamActive(e.target.checked)} />
                     Join with Mic and camera turned off
                 </label>
                 <DeviceSettings />
