@@ -1,5 +1,5 @@
 import { cn } from '@/lib/utils'
-import { CallControls, CallParticipantsList, CallStatsButton, PaginatedGridLayout, SpeakerLayout } from '@stream-io/video-react-sdk'
+import { CallControls, CallParticipantsList, CallStatsButton, CallingState, PaginatedGridLayout, SpeakerLayout, useCallStateHooks } from '@stream-io/video-react-sdk'
 import React, { useState } from 'react'
 
 import {
@@ -14,6 +14,7 @@ import { LayoutList, Users } from 'lucide-react'
 import { Button } from '../ui/button'
 import { useSearchParams } from 'next/navigation'
 import EndCallButton from './EndCallButton'
+import Loader from '../Loader'
 
 
 type CallLayoutType = 'gird' | 'speaker-left' | 'speaker-right'
@@ -25,6 +26,14 @@ const MeetingRoom = () => {
     const searchParams = useSearchParams()
 
     const isPersonalRoom = !!searchParams.get('personal')
+
+    const { useCallCallingState } = useCallStateHooks();
+
+    const callingState = useCallCallingState()
+
+    if (callingState !== CallingState.JOINED) {
+        return <Loader />
+    }
 
     const CallLayout = () => {
         switch (layout) {
