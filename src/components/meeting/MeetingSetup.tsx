@@ -1,7 +1,8 @@
 import { DeviceSettings, VideoPreview, useCall } from '@stream-io/video-react-sdk'
 import React, { useEffect, useState } from 'react'
+import { Button } from '../ui/button'
 
-const MeetingSetup = () => {
+const MeetingSetup = ({ setIsSetupComplete }: { setIsSetupComplete: (value: boolean) => void }) => {
     const [isMicCamActive, setIsMicCamActive] = useState(false)
 
     const call = useCall()
@@ -22,7 +23,7 @@ const MeetingSetup = () => {
 
     return (
         <div className='flex h-screen w-full flex-col items-center justify-center gap-3 text-white'>
-            <h1 className='text-2xl font-bold'>Setup</h1>
+            <h1 className='text-2xl font-bold'>Pre-Meeting Setup</h1>
             <VideoPreview />
             <div className='flex h-16 items-center justify-center gap-3'>
                 <label htmlFor="" className='flex items-center justify-center gap-2 font-medium'>
@@ -30,7 +31,14 @@ const MeetingSetup = () => {
                     Join with Mic and camera turned off
                 </label>
                 <DeviceSettings />
+
             </div>
+            <Button className='rounded-md bg-sky-500 px-4 py-2.5 shadow-inner font-semibold text-black hover:bg-sky-600 transition' onClick={() => {
+                call.join();
+                setIsSetupComplete(true)
+            }}>
+                Join Meeting
+            </Button>
         </div>
     )
 }

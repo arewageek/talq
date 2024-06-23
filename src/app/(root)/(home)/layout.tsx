@@ -16,7 +16,7 @@ const HomeLayout = ({ children }: layoutProps) => {
                     </div>
                 </section>
             </div>
-            Footer
+            {/* Footer */}
         </main>
     )
 }
