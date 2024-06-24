@@ -10,7 +10,7 @@ const HomeLayout = ({ children }: layoutProps) => {
             <div className='flex'>
                 <Sidebar />
 
-                <section className='flex h-screen flex-1 flex-col px-6 pb-6 pt-28 max-md:pb-14 sm-px-14 '>
+                <section className='flex h-screen flex-1 flex-col px-6 pb-6 pt-28 max-md:pb-14 sm-px-14 xl:px-24 overflow-y-auto'>
                     <div className='w-full text-white'>
                         {children}
                     </div>
