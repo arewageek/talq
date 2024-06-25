@@ -66,7 +66,7 @@ const Personal = () => {
 
                         </div>
                         :
-                        <><Image src={"/icons/Rocket.svg"} height={20} width={20} alt='Copy to clipboard' /> Start</>
+                        <><Image src={"/icons/Rocket.svg"} height={20} width={20} alt='Copy to clipboard' /> Start Meeting</>
                     }
                 </Button>
                 <Button onClick={() => { navigator.clipboard.writeText(meetingLink); toast({ title: "Link Copied" }) }} className='bg-dark-3 flex gap-3 font-semibold'>

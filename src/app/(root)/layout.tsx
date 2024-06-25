@@ -1,13 +1,23 @@
 import StreamVideoProvider from '@/providers/StreamClientProvider'
+import { SignedIn, SignedOut } from '@clerk/nextjs'
 import { ReactNode } from 'react'
 
 const RootLayout = ({ children }: { children: ReactNode }) => {
     return (
-        <StreamVideoProvider>
-            <main>
-                {children}
-            </main>
-        </StreamVideoProvider>
+        <>
+            <SignedIn>
+                <StreamVideoProvider>
+                    <main>
+                        {children}
+                    </main>
+                </StreamVideoProvider>
+            </SignedIn>
+            <SignedOut>
+                <main>
+                    {children}
+                </main>
+            </SignedOut>
+        </>
     )
 }
 

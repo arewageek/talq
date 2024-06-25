@@ -29,7 +29,7 @@ const MobileNav = () => {
                     <SheetTitle>
                         <Link href="/" className='flex items-center gap-1'>
                             <Image src="/icons/logo.png" width={32} height={32} alt="Logo" className='max-sm:size-10' />
-                            <p className='text-[26px] font-extrabold text-white'>TALQ</p>
+                            <p className='text-[26px] font-extrabold text-white'>TALQQ</p>
                         </Link>
 
                     </SheetTitle>

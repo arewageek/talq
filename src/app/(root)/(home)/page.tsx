@@ -1,4 +1,8 @@
+
+
+import DemoMeetingTypeList from '@/components/demo/DemoMeetingTypeList'
 import MeetingTypeList from '@/components/meeting/MeetingTypeList'
+import { SignInButton, SignedIn, SignedOut } from '@clerk/nextjs'
 import React from 'react'
 
 const HomePage = () => {
@@ -30,7 +34,16 @@ const HomePage = () => {
 
             </div>
 
-            <MeetingTypeList />
+            <SignedIn>
+                <MeetingTypeList />
+            </SignedIn>
+
+            <SignedOut>
+                <SignInButton>
+                    <DemoMeetingTypeList />
+
+                </SignInButton>
+            </SignedOut>
 
         </section>
     )
