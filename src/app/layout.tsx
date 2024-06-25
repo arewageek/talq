@@ -35,14 +35,14 @@ export default function RootLayout({
         }
       }}>
         <body className={`bg-dark-2 ${inter.className}`}>
-          {/* {children} */}
-
+          {children}
+          {/* 
           <div className="h-screen w-screen flex justify-center items-center">
             <h2 className="font-semibold text-2xl text-white">
               Project has been migrated to <a className="font-extrabold no-underline text-sky-200" href="https://talqq.vercel.app">"talqq.vercel.app"</a>
             </h2>
 
-          </div>
+          </div> */}
 
           <Toaster />
         </body>
