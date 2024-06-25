@@ -35,7 +35,7 @@ export default function RootLayout({
         }
       }}>
         <body className={`bg-dark-2 ${inter.className}`}>
-          {children}
+          {/* {children} */}
 
           <div className="h-screen w-screen flex justify-center items-center">
             <h2 className="font-semibold text-2xl text-white">
